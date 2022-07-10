@@ -1,7 +1,7 @@
 import { capitalize } from '@/core/utils'
 
 export class DomListener {
-  costructor($root, listeners = []) {
+  constructor($root, listeners = []) {
     if (!$root) {
       throw new Error('No $rppt provided for DomListener')
     }
@@ -18,7 +18,10 @@ export class DomListener {
     })
   }
   removeDOMListeners() {
-
+    this.listeners.forEach(listener => {
+      const method = getMethodName(listener)
+      this.$root.off(listener, this[method])
+    })
   }
 }
 
