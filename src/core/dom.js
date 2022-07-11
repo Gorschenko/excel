@@ -3,6 +3,7 @@ class Dom {
     this.$el = typeof selector === 'string'
       ? document.querySelector(selector)
       : selector
+      console.log(this.$el)
   }
 
   html (html) {
