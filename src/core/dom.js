@@ -21,6 +21,9 @@ class Dom {
   off (eventType, callback) {
     this.$el.removeEventListener(eventType, callback)
   }
+  find(selector) {
+    return $(this.$el.querySelector(selector))
+  }
   append(node) {
     if (node instanceof Dom) {
       node = node.$el
@@ -48,6 +51,12 @@ class Dom {
     Object
       .keys(styles)
       .forEach(key => this.$el.style[key] = styles[key])
+  }
+  addClass(className) {
+    this.$el.classList.add(className)
+  }
+  removeClass(className) {
+    this.$el.classList.remove(className)
   }
 }
 
