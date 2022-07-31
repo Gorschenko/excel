@@ -22,8 +22,8 @@ export class Emitter {
   }
 }
 
-const emitter = new Emitter()
 
 // exmaple
+// const emitter = new Emitter()
 // emitter.subscribe('vladilen', data => console.log('Sub', data))
 // emitter.emit('vladilen', 42)
