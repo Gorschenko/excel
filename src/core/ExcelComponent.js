@@ -22,13 +22,13 @@ export class ExcelComponent extends DomListener {
   }
   $on(event, fn) {
     const unsub = this.emitter.subscribe(event, fn)
-    this.unsubscribres.push(unsub)
+    this.unsubscribers.push(unsub)
   }
   init() {
     this.initDOMListeners()
   }
   destroy () {
     this.removeDOMListeners()
-    this.unsubscribres.forEach(unsub => unsub())
+    this.unsubscribers.forEach(unsub => unsub())
   }
 }
